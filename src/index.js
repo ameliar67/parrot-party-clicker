@@ -36,6 +36,44 @@ resetButton.addEventListener("click", () => {
 
 // Extra:
 // // Box 1: When the mouse hovers over Box 1, switch the background to pink
+
+const boxOne = document.getElementById("box-one")
+boxOne.addEventListener("mouseenter", () => {
+    document.body.style.backgroundColor = "pink";
+});
+
+// Triggers when the mouse moves away from the element
+boxOne.addEventListener("mouseleave", () => {
+    document.body.style.backgroundColor = ""; // Resets back to the original color
+});
 // Box 2: When the spacebar is pressed down, make the text in Box 2 turn into a flan emoji
+
+const boxTwo = document.getElementById("box-two")
+const boxTwoText = document.getElementById("box-two-text")
+document.addEventListener("keydown", (event) => {
+  if (event.key === " " || event.code === "Space") {
+    // Prevent the default behavior (like scrolling down the webpage)
+    event.preventDefault(); 
+    
+    boxTwoText.textContent = "🍮"
+    // Add your code here
+  }
+});
+
 // Box 3: When Box 3 is clicked on, make Party Parrot appear and disappear
+const boxThree = document.getElementById("box-three")
+const partyParrot = document.getElementById("party-parrot")
+boxThree.addEventListener("click", (event) => {
+    // Check if the parrot is currently visible (not hidden)
+    if (partyParrot.style.display !== "none") {
+        partyParrot.style.display = "none";    // Hide it
+    } else {
+        partyParrot.style.display = "block";   // Show it
+    }
+});
 // Box 4: When Box 4 is double clicked, an alert shows up
+const boxFour = document.getElementById("box-four")
+boxFour.addEventListener("dblclick", (event) => {
+    // Check if the parrot is currently visible (not hidden)
+    alert('hello!');
+});
